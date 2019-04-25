@@ -23,9 +23,8 @@ public class MessageServiceImpl implements MessageService {
 
   public Flux<Command> getAll() {
     return Flux.interval(Duration.ofSeconds(1))
-      .onBackpressureDrop()
       .map(this::generateComment)
-      .flatMapIterable(x -> x);
+      .flatMapIterable(it -> it);
   }
 
   private List<Command> generateComment(long interval) {
