@@ -8,13 +8,18 @@ import java.time.Duration;
 import reactor.core.publisher.Flux;
 
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jos.dem.springboot.sse.model.Command;
 import com.jos.dem.springboot.sse.model.MessageCommand;
 import com.jos.dem.springboot.sse.service.MessageService;
+import com.jos.dem.springboot.sse.util.MessageGenerator;
 
 @Service
 public class MessageServiceImpl implements MessageService {
+
+  @Autowired
+  private MessageGenerator messageGenerator;
 
   public Flux<Command> getAll() {
     return Flux.interval(Duration.ofSeconds(1))
@@ -26,7 +31,7 @@ public class MessageServiceImpl implements MessageService {
   private List<Command> generateComment(long interval) {
     Command command = new MessageCommand(
       "josdem",
-      "Hello World!",
+      messageGenerator.generate(),
       Instant.now());
     return Arrays.asList(command);
   }
