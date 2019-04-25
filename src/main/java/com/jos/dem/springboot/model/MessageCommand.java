@@ -10,8 +10,8 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageCommand implements Command {
-	private String nickname;
-	private String text;
+  private String nickname;
+  private String text;
   private Instant timestamp;
 }
 
