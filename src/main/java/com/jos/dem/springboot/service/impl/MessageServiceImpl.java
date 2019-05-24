@@ -23,16 +23,7 @@ public class MessageServiceImpl implements MessageService {
 
   public Flux<Command> getAll() {
     return Flux.interval(Duration.ofSeconds(1))
-      .map(this::generateComment)
-      .flatMapIterable(it -> it);
-  }
-
-  private List<Command> generateComment(long interval) {
-    Command command = new MessageCommand(
-      "josdem",
-      messageGenerator.generate(),
-      Instant.now());
-    return Arrays.asList(command);
+      .map(it -> new MessageCommand("josdem", messageGenerator.generate(), Instant.now()));
   }
 
 }
