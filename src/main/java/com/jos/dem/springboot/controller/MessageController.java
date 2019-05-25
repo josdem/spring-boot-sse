@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jos.dem.springboot.sse.model.Command;
+import com.jos.dem.springboot.sse.model.MessageCommand;
 import com.jos.dem.springboot.sse.service.MessageService;
 
 @RestController
@@ -16,8 +16,8 @@ public class MessageController {
   private MessageService messageService;
 
   @GetMapping("/")
-  public Flux<Command> index() {
-    return messageService.getAll();
+  public Flux<MessageCommand> index() {
+    return messageService.stream();
   }
 
 }

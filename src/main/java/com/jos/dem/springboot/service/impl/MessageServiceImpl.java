@@ -10,7 +10,6 @@ import reactor.core.publisher.Flux;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jos.dem.springboot.sse.model.Command;
 import com.jos.dem.springboot.sse.model.MessageCommand;
 import com.jos.dem.springboot.sse.service.MessageService;
 import com.jos.dem.springboot.sse.util.MessageGenerator;
@@ -21,7 +20,7 @@ public class MessageServiceImpl implements MessageService {
   @Autowired
   private MessageGenerator messageGenerator;
 
-  public Flux<Command> getAll() {
+  public Flux<MessageCommand> stream() {
     return Flux.interval(Duration.ofSeconds(1))
       .map(it -> new MessageCommand("josdem", messageGenerator.generate(), Instant.now()));
   }

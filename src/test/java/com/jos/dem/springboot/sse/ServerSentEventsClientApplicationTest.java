@@ -18,7 +18,6 @@ import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-import com.jos.dem.springboot.sse.model.Command;
 import com.jos.dem.springboot.sse.model.MessageCommand;
 
 import org.slf4j.Logger;
