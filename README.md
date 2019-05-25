@@ -1,7 +1,7 @@
-Spring Boot Server-sent Event
+Spring Boot Server-sent Events
 ----------------------------------------
 
-This project shows how to create a reactive web application using [Server-sent Event](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) with Spring Boot
+This project shows how to create a reactive web application using [Server-sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) with Spring Boot
 
 #### To run the project
 
