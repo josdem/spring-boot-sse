@@ -27,3 +27,7 @@ dependencies {
   }
   testImplementation 'io.projectreactor:reactor-test'
 }
+
+test {
+  useJUnitPlatform()
+}
