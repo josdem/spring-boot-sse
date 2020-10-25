@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MessageCommand {
+public class Event {
   private String nickname;
   private String text;
   private Instant timestamp;

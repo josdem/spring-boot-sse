@@ -7,9 +7,9 @@ import java.util.Random;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MessageGenerator {
+public class EventGenerator {
 
-  private List<String> messages = Arrays.asList(
+  private List<String> events = Arrays.asList(
     "Bonjour",
     "Hola",
     "Zdravstvuyte",
@@ -17,10 +17,10 @@ public class MessageGenerator {
     "Guten Tag",
     "Hello");
 
-  private final Random random = new Random(messages.size());
+  private final Random random = new Random(events.size());
 
   public String generate() {
-    return messages.get(random.nextInt(messages.size()));
+    return events.get(random.nextInt(events.size()));
   }
 
 }
